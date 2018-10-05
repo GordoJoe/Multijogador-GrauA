@@ -1,18 +1,21 @@
 {
-  "name": "angular",
+  "name": "xoriowma.github",
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "@angular/common": "^6.1.9",
-    "@angular/compiler": "^6.1.9",
-    "@angular/core": "^6.1.9",
-    "@angular/forms": "^6.1.9",
-    "@angular/platform-browser": "^6.1.9",
-    "@angular/platform-browser-dynamic": "^6.1.9",
-    "@angular/router": "^6.1.9",
-    "core-js": "^2.5.7",
-    "rxjs": "^6.3.3",
-    "zone.js": "^0.8.26"
+    "rxjs": "6.3.3",
+    "core-js": "2.5.7",
+    "zone.js": "0.8.26",
+    "@types/node": "8.9.5",
+    "@angular/core": "6.1.9",
+    "@angular/forms": "6.1.9",
+    "@types/jasmine": "2.8.9",
+    "@angular/common": "6.1.9",
+    "@angular/router": "6.1.9",
+    "@angular/compiler": "6.1.9",
+    "@types/jasminewd2": "2.0.5",
+    "@angular/platform-browser": "6.1.9",
+    "@angular/platform-browser-dynamic": "6.1.9"
   },
   "scripts": {
     "ng": "ng",
