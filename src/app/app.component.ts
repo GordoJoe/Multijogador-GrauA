@@ -9,6 +9,6 @@ export class AppComponent  {
 <<<<<<< HEAD
   name = 'Angular AEEW';
 =======
-  name = 'Angulaaaaar';
+  name = 'Angulaaaaar 123';
 >>>>>>> origin/master
 }
