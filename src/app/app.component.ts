@@ -1,4 +1,9 @@
 import { Component } from '@angular/core';
+import { App, NavController } from 'ionic-angular';
+import "pixi";
+import "p2";
+import * as Phaser from "phaser-ce";
+import "phaser-state-transition"
 
 @Component({
   selector: 'my-app',
