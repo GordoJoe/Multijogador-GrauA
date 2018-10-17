@@ -1,7 +1,49 @@
-<hello name="{{ name }}"></hello>
-<p>
-  Start editing to see some magic happen :)
-</p>
-<p>
-  teste linha 02
-</p>
+<div class="section">
+      <div class="container">
+        <div class="content">
+          <h1 class="title">Hora do Show!!!</h1>
+          <h6 class="subtitle is-6"><strong>pega inimigo</strong></h6>
+          <hr>
+
+          <!-- shows when a player has won the game -->
+          <section *ngIf="winner" class="notification is-success has-text-centered" style="color:white">
+            <h1>Jogador {{ winner.player.id }} Ganho!</h1>
+            <h5>Click <a href="{{ gameUrl }}">AK</a> pra joga de novo.</h5>
+          </section>
+
+          <!-- shows while waiting for 2nd user to join -->
+          <div *ngIf="players < 2">
+            <h2>Esperando Mais 1</h2>
+            <h3 class="subtitle is-6">Link pra invita: <a href="{{ gameUrl }}?id={{ gameId }}" target="_blank"></a></h3>
+          </div>
+
+          <!-- loops through the boards array and displays the player and board tiles -->
+          <div class="columns" *ngIf="validPlayer">
+            <div class="column has-text-centered" *ngFor="let board of boards; let i = index">
+              <h5>
+                PLAYER {{ board.player.id }} <span class="tag is-info" *ngIf="i == player">Você</span>
+                // <strong>Money: {{ board.player.score }}</strong>
+              </h5>
+              <table class="is-bordered" [style.opacity] = "i == player ? 0.5 : 1">
+                <tr *ngFor="let row of board.tiles; let j = index">
+                  <td *ngFor="let col of row; let k = index"
+                  (click) = "fireTorpedo($event)"
+                  [style.background-color] = "col.used ? '' : 'transparent'"
+                  [class.win] = "col.status == 'win'" [class.fail] = "col.status !== 'win'"
+                  class="TD-tile" id="t{{i}}{{j}}{{k}}">
+                  {{ col.value == "X" ? "X" : "💀" }}
+                </td>
+              </tr>
+            </table>
+          </div>
+        </div>
+
+        <div class="has-text-centered">
+          <span class="tag is-warning" *ngIf="canPlay">Vai q é tua filhão!</span>
+          <span class="tag is-danger" *ngIf="!canPlay">Espera Rapa.</span>
+          <h5 class="title"><small>{{ players }} Jogador(es) no jogo</small></h5>
+        </div>
+
+      </div>
+    </div>
+    </div>
