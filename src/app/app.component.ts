@@ -46,9 +46,9 @@
           this.boards[boardId].tiles[row][col].status = 'Torre';
           this.boards[boardId].tiles[row][col].used = true;
           this.boards[boardId].tiles[row][col].value = "X";
-          this.boards[this.player].player.Gold++;
         } else {
           this.toastr.info("Não pode bota torre aqui");
+          this.boards[this.player].player.Gold++;
         }
         this.canPlay = false;
         return this;
